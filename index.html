@@ -57,7 +57,7 @@
 							<h1 class="hero-title mt-0">Jamu Desa Kiringan</h1>
 							<p class="hero-paragraph">Menjual berbagai jenis jamu dan tentu nya sangat berkhasiat bagi
 								tubuh</p>
-							<a class="button button-shadow" href="https://wa.me/6281251058402"
+							<a class="button button-shadow" href="https://wa.me/6281541251645"
 								target="_blank">Whatsapp</a>
 							<a class="button button-primary button-shadow"
 								href="https://www.instagram.com/kkn.kiringan?igsh=ZzZkd3NjbXZoNXo="
@@ -723,17 +723,27 @@
 					<div class="newsletter-inner section-inner">
 						<div class="newsletter-header text-center">
 							<h2 class="section-title mt-0">Hubungi Kami & Pesan Sekarang</h2>
-							<p class="section-paragraph">Lorem ipsum is common placeholder text used to demonstrate the
-								graphic elements of a document or visual presentation.</p>
+							<p class="section-paragraph">
+								Masukkan email Anda untuk mendapatkan informasi terbaru tentang produk kami,
+								promo spesial, dan penawaran menarik lainnya!
+							</p>
 						</div>
 						<div class="footer-form newsletter-form field field-grouped">
 							<div class="control control-expanded">
-								<input class="input" type="email" name="email" placeholder="Your best email&hellip;">
+								<input id="emailInput" class="input" type="email" placeholder="Masukkan email Anda..."
+									required>
 							</div>
 							<div class="control">
-								<a class="button button-primary button-block button-shadow" href="#">Early access</a>
+								<a id="sendEmailButton" class="button button-primary button-block button-shadow"
+									href="#">
+									Kirim
+								</a>
 							</div>
 						</div>
+					</div>
+
+					<div class="newsletter-inner section-inner">
+						<img src="assets/images/KKN KONVERSI desa wisata Jamu kiringan.png" alt="">
 					</div>
 				</div>
 			</section>
@@ -770,13 +780,13 @@
 					</div>
 					<ul class="footer-links list-reset">
 						<li>
-							<a href="#">Kontak</a>
+							<a href="https://wa.me/6281541251645">Kontak</a>
 						</li>
 						<li>
 							<a href="#">Menu</a>
 						</li>
 						<li>
-							<a href="#">Media Sosial</a>
+							<a href="https://www.instagram.com/kkn.kiringan?igsh=ZzZkd3NjbXZoNXo=">Media Sosial</a>
 						</li>
 					</ul>
 					<ul class="footer-social-links list-reset">
@@ -819,6 +829,19 @@
 	</div>
 
 	<script src="assets/js/main.min.js"></script>
+	<script>
+		document.getElementById("sendEmailButton").addEventListener("click", function () {
+			var emailInput = document.getElementById("emailInput").value;
+			if (emailInput) {
+				var subject = "Pendaftaran Newsletter";
+				var body = "Halo,\n\nSaya ingin mendapatkan informasi terbaru tentang produk dan promo.\n\nEmail saya: " + emailInput;
+				var mailtoLink = "mailto:jamukiringan@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+				window.location.href = mailtoLink;
+			} else {
+				alert("Mohon masukkan email Anda terlebih dahulu.");
+			}
+		});
+	</script>
 </body>
 
 </html>
